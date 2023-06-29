@@ -1,4 +1,4 @@
-# Scrapy settings for jobparser project
+# Scrapy settings for costorama project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,20 +7,17 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = "jobparser"
+BOT_NAME = "costorama"
 
-SPIDER_MODULES = ["jobparser.spiders"]
-NEWSPIDER_MODULE = "jobparser.spiders"
-
+SPIDER_MODULES = ["costorama.spiders"]
+NEWSPIDER_MODULE = "costorama.spiders"
+IMAGES_STORE = 'photos'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
-
-LOG_ENABLED = True
-LOG_LEVEL = 'DEBUG' #'ERROR' 'IFNO'
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -28,10 +25,10 @@ LOG_LEVEL = 'DEBUG' #'ERROR' 'IFNO'
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 0
+#DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
-CONCURRENT_REQUESTS_PER_DOMAIN = 16
-CONCURRENT_REQUESTS_PER_IP = 16
+#CONCURRENT_REQUESTS_PER_DOMAIN = 16
+#CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
 COOKIES_ENABLED = True
@@ -48,13 +45,13 @@ COOKIES_ENABLED = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    "jobparser.middlewares.JobparserSpiderMiddleware": 543,
+#    "costorama.middlewares.CostoramaSpiderMiddleware": 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    "jobparser.middlewares.JobparserDownloaderMiddleware": 543,
+#    "costorama.middlewares.CostoramaDownloaderMiddleware": 543,
 #}
 
 # Enable or disable extensions
@@ -66,7 +63,8 @@ COOKIES_ENABLED = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    "jobparser.pipelines.JobparserPipeline": 300,
+    "costorama.pipelines.CostoramaPipeline": 300,
+    "costorama.pipelines.CostoramaPhotoPipeline": 200
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

@@ -6,14 +6,13 @@
 import scrapy
 
 
-class JobparserItem(scrapy.Item):       # Создаем структуру item'a
-    _id = scrapy.Field()
+class JobparserItem(scrapy.Item):
+    # define the fields for your item here like:
     name = scrapy.Field()
     salary = scrapy.Field()
-    location = scrapy.Field()
-    link = scrapy.Field()
+    url = scrapy.Field()
+    organization = scrapy.Field()
+    currency = scrapy.Field()
     salary_min = scrapy.Field()
     salary_max = scrapy.Field()
-    company = scrapy.Field()
-    currency = scrapy.Field()
-    site = scrapy.Field()
+    _id = scrapy.Field()
